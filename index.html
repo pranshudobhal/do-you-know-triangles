@@ -11,18 +11,85 @@
     <nav class="navbar">
       <h1 class="navbar-header">do you know triangles?</h1>
       <div class="navbar-list">
-        <a class="navbar-links" href="">triangle or not?</a>
-        <a class="navbar-links" href="">type of triangle</a>
-        <a class="navbar-links" href="">find the third angle</a>
-        <a class="navbar-links" href="">hypotenuse finder</a>
-        <a class="navbar-links" href="">area of triangle</a>
+        <a class="navbar-links" id="triangle-or-not" href="">triangle or not?</a>
+        <a class="navbar-links" id="type-of-triangle" href="">type of triangle</a>
+        <a class="navbar-links" id="find-third-angle" href="">find the third angle</a>
+        <a class="navbar-links" id="hypotenuse-finder" href="">hypotenuse finder</a>
+        <a class="navbar-links" id="area-of-triangle" href="">area of triangle</a>
       </div>
     </nav>
     <main>
-      <section class="section">
+      <section id="check-triangle" class="section">
         <div class="container container-center">
           <h1>triangle or not?</h1>
-          <div class="triangle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam illo esse dolore pariatur consequuntur porro similique optio debitis et commodi?</div>
+          <div class="triangle">
+            <label for="ang1">First Angle:</label>
+            <input type="number" min="1" id="ang1" name="ang1" /><br />
+            <label for="ang2">Second Angle:</label>
+            <input type="number" min="1" id="ang2" name="ang2" /><br />
+            <label for="ang3">Third Angle:</label>
+            <input type="number" min="1" id="ang3" name="ang3" /><br />
+            <button id="submit-sum" type="submit">Check Triangle</button>
+            <p id="output-sum"></p>
+          </div>
+        </div>
+      </section>
+      <section id="triangle-type" class="section hidden">
+        <div class="container container-center">
+          <h1>type of triangle</h1>
+          <div class="triangle">
+            <label for="ang1">First Angle:</label>
+            <input type="number" min="1" id="ang1" name="ang1" /><br />
+            <label for="ang2">Second Angle:</label>
+            <input type="number" min="1" id="ang2" name="ang2" /><br />
+            <label for="ang3">Third Angle:</label>
+            <input type="number" min="1" id="ang3" name="ang3" /><br />
+            <button id="submit-type" type="submit">Check Triangle</button>
+            <p id="output-type"></p>
+          </div>
+        </div>
+      </section>
+      <section id="find-angle" class="section hidden">
+        <div class="container container-center">
+          <h1>find the third angle</h1>
+          <div class="triangle">
+            <label for="ang1">First Angle:</label>
+            <input type="number" min="1" id="ang1" name="ang1" /><br />
+            <label for="ang2">Second Angle:</label>
+            <input type="number" min="1" id="ang2" name="ang2" /><br />
+            <label for="ang3">Third Angle:</label>
+            <input type="number" min="1" id="ang3" name="ang3" /><br />
+            <button id="submit-third-angle" type="submit">Check Triangle</button>
+            <p id="output-third-angle"></p>
+          </div>
+        </div>
+      </section>
+      <section id="find-hypotenuse" class="section hidden">
+        <div class="container container-center">
+          <h1>hypotenuse finder</h1>
+          <div class="triangle">
+            <label for="ang1">First Angle:</label>
+            <input type="number" min="1" id="ang1" name="ang1" /><br />
+            <label for="ang2">Second Angle:</label>
+            <input type="number" min="1" id="ang2" name="ang2" /><br />
+            <label for="ang3">Third Angle:</label>
+            <input type="number" min="1" id="ang3" name="ang3" /><br />
+            <button id="submit-hypotenuse" type="submit">Check Triangle</button>
+            <p id="output-hypotenuse"></p>
+          </div>
+        </div>
+      </section>
+      <section id="area-triangle" class="section hidden">
+        <div class="container container-center">
+          <h1>area of triangle</h1>
+          <div class="triangle">
+            <label for="ang1">Base</label>
+            <input type="number" min="1" id="ang1" name="ang1" /><br />
+            <label for="ang2">Height:</label>
+            <input type="number" min="1" id="ang3" name="ang3" /><br />
+            <button id="submit-area" type="submit">Calculate Area</button>
+            <p id="output-area"></p>
+          </div>
         </div>
       </section>
     </main>

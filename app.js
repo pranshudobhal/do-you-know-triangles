@@ -72,6 +72,27 @@ document.getElementById('hypotenuse-finder').addEventListener('click', function 
   document.getElementById('find-angle').classList.add('hidden');
   document.getElementById('find-hypotenuse').classList.remove('hidden');
 });
+
+document.getElementById('submit-hypotenuse').addEventListener('click', findHypotenuse);
+
+function findHypotenuse() {
+  //take base and perpendicular value from user
+  var base = document.getElementById('base-hypo').value;
+  var perpendicular = document.getElementById('perpendicular-hypo').value;
+
+  //validations
+  if (base == '' || perpendicular == '') {
+    document.getElementById('output-area').innerText = 'Please provide all inputs!';
+  } else if (base == 0 || perpendicular == 0) {
+    document.getElementById('output-area').innerText = 'Sides cannot be ZERO! Please try again!';
+  } else {
+    //calculate hypotenuse
+    var hypotenuse = Math.sqrt(Math.pow(Number(base), 2) + Math.pow(Number(perpendicular), 2)).toFixed(2);
+    //display hypotenuse
+    document.getElementById('output-hypotenuse').innerText = 'The Hypotenuse is : ' + hypotenuse + ' units';
+  }
+}
+
 /** End find hypotenuse */
 
 /** Start area of triangle */
@@ -100,9 +121,8 @@ function areaOfTriangles() {
   } else {
     //calculate area
     var area = Number(base) * Number(height) * 0.5;
-    var two = '2';
     //display area
-    document.getElementById('output-area').innerHTML = 'The Area of the triangle is : ' + area + ' cm' + two.sup();
+    document.getElementById('output-area').innerText = 'The Area of the triangle is : ' + area + ' square units';
   }
 
   base.value = '';

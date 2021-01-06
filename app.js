@@ -10,15 +10,14 @@ document.getElementById('triangle-or-not').addEventListener('click', function (e
   document.getElementById('output-sum').innerText = '';
 });
 
-//Ask 3 angles from user
-var angleOne = document.getElementById('ang1');
-var angleTwo = document.getElementById('ang2');
-var angleThree = document.getElementById('ang3');
-
 document.getElementById('submit-sum').addEventListener('click', sumOfTriangles);
 
 //add the values provided by user and check if triangle or not
 function sumOfTriangles() {
+  //Ask 3 angles from user
+  var angleOne = document.getElementById('ang1');
+  var angleTwo = document.getElementById('ang2');
+  var angleThree = document.getElementById('ang3');
   var angleOneValue = angleOne.value;
   var angleTwoValue = angleTwo.value;
   var angleThreeValue = angleThree.value;
@@ -85,5 +84,29 @@ document.getElementById('area-of-triangle').addEventListener('click', function (
   document.getElementById('find-angle').classList.add('hidden');
   document.getElementById('find-hypotenuse').classList.add('hidden');
 });
+
+document.getElementById('submit-area').addEventListener('click', areaOfTriangles);
+
+function areaOfTriangles() {
+  //take base and height value from user
+  var base = document.getElementById('base').value;
+  var height = document.getElementById('height').value;
+
+  //validations
+  if (base == '' || height == '') {
+    document.getElementById('output-area').innerText = 'Please provide all inputs!';
+  } else if (base == 0 || height == 0) {
+    document.getElementById('output-area').innerText = 'Sides cannot be ZERO! Please try again!';
+  } else {
+    //calculate area
+    var area = Number(base) * Number(height) * 0.5;
+    var two = '2';
+    //display area
+    document.getElementById('output-area').innerHTML = 'The Area of the triangle is : ' + area + ' cm' + two.sup();
+  }
+
+  base.value = '';
+  height.value = '';
+}
 
 /** End area of triangle */

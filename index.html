@@ -54,13 +54,12 @@
         <div class="container container-center">
           <h1>find the third angle</h1>
           <div class="triangle">
-            <label for="ang1">First Angle:</label>
-            <input type="number" min="1" id="ang1" name="ang1" /><br />
-            <label for="ang2">Second Angle:</label>
-            <input type="number" min="1" id="ang2" name="ang2" /><br />
-            <label for="ang3">Third Angle:</label>
-            <input type="number" min="1" id="ang3" name="ang3" /><br />
-            <button id="submit-third-angle" type="submit">Check Triangle</button>
+            <div id="AngleOne">Angle One: <span id="angle-one"></span></div>
+            <div id="AngleTwo">Angle Two: <span id="angle-two"></span></div>
+            <br />
+            <label for="guessed-angle">Third Angle:</label>
+            <input type="number" min="1" id="guessed-angle" name="guessed-angle" /><br />
+            <button id="submit-third-angle" type="submit">Check Third Angle</button>
             <p id="output-third-angle"></p>
           </div>
         </div>

@@ -61,6 +61,43 @@ document.getElementById('find-third-angle').addEventListener('click', function (
   document.getElementById('find-angle').classList.remove('hidden');
   document.getElementById('find-hypotenuse').classList.add('hidden');
 });
+
+document.getElementById('submit-third-angle').addEventListener('click', findThirdAngle);
+
+var randomAngleOne = Math.floor(Math.random() * 100 + 1);
+var randomAngleTwo = Math.floor(Math.random() * 100 + 1);
+document.getElementById('angle-one').innerText = randomAngleOne;
+document.getElementById('angle-two').innerText = randomAngleTwo;
+
+function findThirdAngle() {
+  var userAnswer = document.getElementById('guessed-angle').value;
+
+  //validations
+  if (userAnswer == '') {
+    document.getElementById('output-third-angle').innerText = 'Please provide input!';
+  } else if (userAnswer == 0) {
+    document.getElementById('output-third-angle').innerText = 'Angle cannot be ZERO! Please try again!';
+  } else {
+    //calculate third angle
+    var thirdAngle = 180 - (randomAngleTwo + randomAngleOne);
+    // console.log(typeof thirdAngle);
+
+    if (Number(userAnswer) === thirdAngle) {
+      //display third angle
+      document.getElementById('output-third-angle').innerText = ' Yess!! You are correct! The Third angle is : ' + thirdAngle;
+    } else {
+      //display third angle
+      document.getElementById('output-third-angle').innerText = 'Oh no! The Third angle is : ' + thirdAngle;
+    }
+  }
+
+  var randomAngleOne = Math.floor(Math.random() * 100 + 1);
+  var randomAngleTwo = Math.floor(Math.random() * 100 + 1);
+  document.getElementById('angle-one').innerText = randomAngleOne;
+  document.getElementById('angle-two').innerText = randomAngleTwo;
+}
+
+// Math.floor(Math.random()*100 / 2)
 /** End find the third angle */
 
 /** Start find hypotenuse */

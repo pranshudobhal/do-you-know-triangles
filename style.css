@@ -58,6 +58,13 @@ main {
   display: none;
 }
 
+#AngleOne,
+#AngleTwo {
+  display: inline-block;
+  border: 2px solid lightblue;
+  padding: 1rem;
+}
+
 /** container **/
 .container {
   padding-left: 1rem;

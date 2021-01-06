@@ -90,11 +90,14 @@ function findThirdAngle() {
       document.getElementById('output-third-angle').innerText = 'Oh no! The Third angle is : ' + thirdAngle;
     }
   }
+  console.log(randomAngleOne);
+  console.log(randomAngleTwo);
 
-  var randomAngleOne = Math.floor(Math.random() * 100 + 1);
-  var randomAngleTwo = Math.floor(Math.random() * 100 + 1);
-  document.getElementById('angle-one').innerText = randomAngleOne;
-  document.getElementById('angle-two').innerText = randomAngleTwo;
+  // var randomAngleOne = Math.floor(Math.random() * 100 + 1);
+  // var randomAngleTwo = Math.floor(Math.random() * 100 + 1);
+  // document.getElementById('angle-one').innerText = randomAngleOne;
+  // document.getElementById('angle-two').innerText = randomAngleTwo;
+  // document.getElementById('guessed-angle').innerText = '';
 }
 
 // Math.floor(Math.random()*100 / 2)

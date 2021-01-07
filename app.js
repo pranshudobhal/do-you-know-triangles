@@ -50,6 +50,8 @@ document.getElementById('type-of-triangle').addEventListener('click', function (
   document.getElementById('find-angle').classList.add('hidden');
   document.getElementById('find-hypotenuse').classList.add('hidden');
   randomAngleCheck();
+  document.getElementById('typeTriangle').value = '';
+  document.getElementById('output-type').innerText = '';
 });
 
 document.getElementById('submit-type').addEventListener('click', checkTypeTriangle);
@@ -65,20 +67,33 @@ function randomAngleCheck() {
 
 function checkTypeTriangle() {
   var userTypeAnswer = document.getElementById('typeTriangle').value;
-  console.log(userTypeAnswer);
-  console.log(randAngleThree);
   var displayAnswer = document.getElementById('output-type');
-  console.log(displayAnswer);
 
   if (randAngleOne <= 0 || randAngleTwo <= 0 || randAngleThree <= 0) {
-    displayAnswer.innerText = 'not a triangle';
+    answer = 'not a triangle';
   } else if (randAngleOne < 90 && randAngleTwo < 90 && randAngleThree < 90) {
-    displayAnswer.innerText = 'acute triangle';
+    answer = 'acute triangle';
   } else if (randAngleOne == 90 || randAngleTwo == 90 || randAngleThree == 90) {
-    displayAnswer.innerText = 'right angled triangle';
+    answer = 'right angled triangle';
   } else {
-    displayAnswer.innerText = 'obtuse triangle';
+    answer = 'obtuse triangle';
   }
+
+  if (answer == userTypeAnswer) {
+    displayAnswer.innerText = 'Yes! You got it correct!';
+  } else {
+    displayAnswer.innerText = 'Oh no! The answer is ' + answer;
+  }
+}
+
+//play again button for new values
+document.getElementById('play-again-type').addEventListener('click', playAgainType);
+
+function playAgainType() {
+  //emptying the values and display and calling random function for new values
+  document.getElementById('typeTriangle').value = '';
+  document.getElementById('output-type').innerText = '';
+  randomAngleCheck();
 }
 /** End type of triangle */
 
@@ -96,7 +111,9 @@ document.getElementById('find-third-angle').addEventListener('click', function (
 });
 
 document.getElementById('submit-third-angle').addEventListener('click', findThirdAngle);
+
 var randomAngleOne, randomAngleTwo;
+
 //function to random 2 values and display them
 function random() {
   randomAngleOne = Math.floor(Math.random() * 10 + 1) * 10;

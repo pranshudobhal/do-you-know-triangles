@@ -65,6 +65,14 @@ main {
   padding: 1rem;
 }
 
+#angleTypeOne,
+#angleTypeTwo,
+#angleTypeThree {
+  display: inline-block;
+  border: 2px solid lightcoral;
+  padding: 1rem;
+}
+
 /** container **/
 .container {
   padding-left: 1rem;

@@ -49,7 +49,37 @@ document.getElementById('type-of-triangle').addEventListener('click', function (
   document.getElementById('triangle-type').classList.remove('hidden');
   document.getElementById('find-angle').classList.add('hidden');
   document.getElementById('find-hypotenuse').classList.add('hidden');
+  randomAngleCheck();
 });
+
+document.getElementById('submit-type').addEventListener('click', checkTypeTriangle);
+var randAngleOne, randAngleTwo, randAngleThree;
+function randomAngleCheck() {
+  randAngleOne = Math.floor(Math.random() * 100 + 1);
+  randAngleTwo = Math.floor(Math.random() * 100 + 1);
+  randAngleThree = 180 - (randAngleOne + randAngleTwo);
+  document.getElementById('angle-type-one').innerText = randAngleOne;
+  document.getElementById('angle-type-two').innerText = randAngleTwo;
+  document.getElementById('angle-type-three').innerText = randAngleThree;
+}
+
+function checkTypeTriangle() {
+  var userTypeAnswer = document.getElementById('typeTriangle').value;
+  console.log(userTypeAnswer);
+  console.log(randAngleThree);
+  var displayAnswer = document.getElementById('output-type');
+  console.log(displayAnswer);
+
+  if (randAngleOne <= 0 || randAngleTwo <= 0 || randAngleThree <= 0) {
+    displayAnswer.innerText = 'not a triangle';
+  } else if (randAngleOne < 90 && randAngleTwo < 90 && randAngleThree < 90) {
+    displayAnswer.innerText = 'acute triangle';
+  } else if (randAngleOne == 90 || randAngleTwo == 90 || randAngleThree == 90) {
+    displayAnswer.innerText = 'right angled triangle';
+  } else {
+    displayAnswer.innerText = 'obtuse triangle';
+  }
+}
 /** End type of triangle */
 
 /** Start find the third angle */
@@ -61,6 +91,8 @@ document.getElementById('find-third-angle').addEventListener('click', function (
   document.getElementById('find-angle').classList.remove('hidden');
   document.getElementById('find-hypotenuse').classList.add('hidden');
   random();
+  document.getElementById('guessed-angle').value = '';
+  document.getElementById('output-third-angle').innerText = '';
 });
 
 document.getElementById('submit-third-angle').addEventListener('click', findThirdAngle);
@@ -96,9 +128,9 @@ function findThirdAngle() {
 }
 
 //play again button for new values
-document.getElementById('play-again-third').addEventListener('click', playAgain);
+document.getElementById('play-again-third').addEventListener('click', playAgainThird);
 
-function playAgain() {
+function playAgainThird() {
   //emptying the values and display and calling random function for new values
   document.getElementById('guessed-angle').value = '';
   document.getElementById('output-third-angle').innerText = '';

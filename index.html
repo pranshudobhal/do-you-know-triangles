@@ -39,13 +39,18 @@
         <div class="container container-center">
           <h1>type of triangle</h1>
           <div class="triangle">
-            <label for="ang1">First Angle:</label>
-            <input type="number" min="1" id="ang1" name="ang1" /><br />
-            <label for="ang2">Second Angle:</label>
-            <input type="number" min="1" id="ang2" name="ang2" /><br />
-            <label for="ang3">Third Angle:</label>
-            <input type="number" min="1" id="ang3" name="ang3" /><br />
-            <button id="submit-type" type="submit">Check Triangle</button>
+            <div id="angleTypeOne">Angle One: <span id="angle-type-one"></span></div>
+            <div id="angleTypeTwo">Angle Two: <span id="angle-type-two"></span></div>
+            <div id="angleTypeThree">Angle Three: <span id="angle-type-three"></span></div>
+            <br /><br />
+            <label for="typeTriangle">Choose a type:</label>
+            <select name="typeTriangle" id="typeTriangle">
+              <option value="not a triangle">not a triangle</option>
+              <option value="right angled triangle">right angled triangle</option>
+              <option value="acute triangle">acute triangle</option>
+              <option value="obtuse triangle">obtuse triangle</option>
+            </select>
+            <button id="submit-type" type="submit">Check Type</button>
             <p id="output-type"></p>
           </div>
         </div>

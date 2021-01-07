@@ -60,14 +60,18 @@ document.getElementById('find-third-angle').addEventListener('click', function (
   document.getElementById('triangle-type').classList.add('hidden');
   document.getElementById('find-angle').classList.remove('hidden');
   document.getElementById('find-hypotenuse').classList.add('hidden');
+  random();
 });
 
 document.getElementById('submit-third-angle').addEventListener('click', findThirdAngle);
-
-var randomAngleOne = Math.floor(Math.random() * 100 + 1);
-var randomAngleTwo = Math.floor(Math.random() * 100 + 1);
-document.getElementById('angle-one').innerText = randomAngleOne;
-document.getElementById('angle-two').innerText = randomAngleTwo;
+var randomAngleOne, randomAngleTwo;
+//function to random 2 values and display them
+function random() {
+  randomAngleOne = Math.floor(Math.random() * 10 + 1) * 10;
+  randomAngleTwo = Math.floor(randomAngleOne / 2);
+  document.getElementById('angle-one').innerText = randomAngleOne;
+  document.getElementById('angle-two').innerText = randomAngleTwo;
+}
 
 function findThirdAngle() {
   var userAnswer = document.getElementById('guessed-angle').value;
@@ -80,7 +84,6 @@ function findThirdAngle() {
   } else {
     //calculate third angle
     var thirdAngle = 180 - (randomAngleTwo + randomAngleOne);
-    // console.log(typeof thirdAngle);
 
     if (Number(userAnswer) === thirdAngle) {
       //display third angle
@@ -90,17 +93,18 @@ function findThirdAngle() {
       document.getElementById('output-third-angle').innerText = 'Oh no! The Third angle is : ' + thirdAngle;
     }
   }
-  console.log(randomAngleOne);
-  console.log(randomAngleTwo);
-
-  // var randomAngleOne = Math.floor(Math.random() * 100 + 1);
-  // var randomAngleTwo = Math.floor(Math.random() * 100 + 1);
-  // document.getElementById('angle-one').innerText = randomAngleOne;
-  // document.getElementById('angle-two').innerText = randomAngleTwo;
-  // document.getElementById('guessed-angle').innerText = '';
 }
 
-// Math.floor(Math.random()*100 / 2)
+//play again button for new values
+document.getElementById('play-again-third').addEventListener('click', playAgain);
+
+function playAgain() {
+  //emptying the values and display and calling random function for new values
+  document.getElementById('guessed-angle').value = '';
+  document.getElementById('output-third-angle').innerText = '';
+  random();
+}
+
 /** End find the third angle */
 
 /** Start find hypotenuse */
